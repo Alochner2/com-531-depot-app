@@ -2,6 +2,7 @@ require 'test_helper'
 
 class ProductTest < ActiveSupport::TestCase
   fixtures :products
+  #...
 end
 
 test "product is not valid without a unique title - i18n" do
