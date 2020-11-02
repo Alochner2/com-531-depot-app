@@ -3,7 +3,7 @@ require 'test_helper'
 class ProductTest < ActiveSupport::TestCase
   fixtures :products
   #...
-end
+
 
 test "product is not valid without a unique title - i18n" do
   product = Product.new(title: products(:ruby).title,
@@ -62,5 +62,6 @@ end
 bad.each do |image_url|
   assert new_product(image_url).invalid?,
           "#{image_url} shouldn't be valid"
+  end
  end
 end
