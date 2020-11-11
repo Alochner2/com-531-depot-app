@@ -26,7 +26,7 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
     assert_select 'li', 'Programming Ruby 1.9'
   end
 
-    assert_redirected_to line_item_url(LineItem.last)
+    assert_redirected_to line_items_url(LineItem.last)
   end
 
   test "should show line_item" do
