@@ -18,9 +18,9 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
   test "should create line_item" do
     assert_difference('LineItem.count') do
       post line_items_url, params: { product_id: products(:ruby).id }
-    end
+  end
 
-    follow_redirect!
+  follow_redirect!
 
     assert_select 'h2', 'Your Pragmatic Cart'
     assert_select 'li', 'Programming Ruby 1.9'
@@ -47,6 +47,6 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
   test "should destroy line_item" do
     assert_difference('LineItem.count', -1) do
       delete line_item_url(@line_item)
-end
+  end
     assert_redirected_to line_items_url
   end
