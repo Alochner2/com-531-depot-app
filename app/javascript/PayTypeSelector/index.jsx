@@ -1,9 +1,15 @@
 import React from 'react'
 
 class PayTypeSelector extends React.Component {
-  onPayTypeSelected(event) {
-    console.log(event.target.value);
+ constructor(props) {
+  super(props);
+  this.onPayTypeSelected = this.onPayTypeSelected.bind(this);
+  this.state = { selectedPayType: null };
  }
+
+ onPayTypeSelected(event) {
+   this.setState({ selectedPayType: event.target.value });
+}
     return (
       <div className="field">
       <label htmlFor="order_pay_type">Pay type</label>
