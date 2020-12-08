@@ -36,7 +36,7 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-  # Configure mail system to be in testing mode
+  # Configure system to send out email
   Rails.application.configure do
     config.action_mailer.delivery_method = :smtp
 
