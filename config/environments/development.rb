@@ -38,7 +38,7 @@ Rails.application.configure do
 
   # Configure mail system to be in testing mode
   Rails.application.configure do
-    config.action_mailer.delivery_method = :test
+    config.action_mailer.delivery_method = :smtp
 
     config.action_mailer.smtp_settings = {
       address:          "smtp.gmail.com",
