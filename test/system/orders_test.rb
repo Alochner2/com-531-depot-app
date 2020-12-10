@@ -43,7 +43,6 @@ class OrdersTest < ApplicationSystemTestCase
 
     select 'Check', from: 'Pay type'
 
-
     assert_selector "#order_routing_number"
 
     fill_in "Routing #", with: "123456"
@@ -58,16 +57,16 @@ class OrdersTest < ApplicationSystemTestCase
 
     order = orders.first
 
-    assert_equal "Dave Thomas",      order.name
-    assert_equal "123 Main Street",  order.address
-    assert_equal "dave@example.com", order.email
-    assert_equal "Check",            order.pay_type
-    assert_equal 1, order.line_items.size
+    assert_equal "Dave Thomas",           order.name
+    assert_equal "123 Main Street",       order.address
+    assert_equal "dave@example.com",      order.email
+    assert_equal "Check",                 order.pay_type
+    assert_equal 1,                       order.line_items.size
 
     mail = ActionMailer::Base.deliveries.last
-    assert_equal ["dave@example.com"],                 mail.to
-    assert_equal 'Sam Ruby <depot@example.com>',       mail[:from].value
-    assert_equal "Pragmatic Store Order Confirmation", mail.subject
+    assert_equal ["dave@example.com"],                    mail.to
+    assert_equal 'Sam Ruby <depot@example.com>',          mail[:from].value
+    assert_equal "Pragmatic Store Order Confirmation",    mail.subject
 
   end
 end
